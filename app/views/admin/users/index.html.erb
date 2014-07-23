@@ -1,0 +1,50 @@
+<div align="right">
+    <%=link_to "Cerrar Sesion", logout_path%>
+</div>
+<div align="left">
+    <h2>Administracion de Usuarios</h2>
+</div>
+<table class="table">
+
+    <thead>
+        <tr>
+            <th class="info"> ID </th>
+            <th class="info"> USUARIO </th>
+            <th class="info"> NOMBRES </th>
+            <th class="info"> PRIMER APELLIDO </th>
+            <th class="info"> SEGUNDO APELLIDO </th>
+        </tr>
+    </thead>
+    <tbody> 
+    
+        <%@user.each do |usuario|%>
+            <tr class="warning">
+
+                <td><%=usuario.id%></td>
+                <td><%=usuario.usuario%></td>   
+        
+                <td><%=usuario.nombres%></td>
+        
+                <td><%=usuario.apellido1%></td>
+        
+                <td><%=usuario.apellido2%></td>
+
+                <td><%= link_to "Editar", edit_admin_user_path(usuario) %></td>
+                <td><%= link_to "Eliminar", admin_user_path(usuario), :confirm => "Esta seguro de eliminar este usuario", :method => :delete  %></td>
+                <td><%= link_to "Ver", admin_user_reportes_path(usuario)%></td>
+
+            </tr>
+
+        <%end%>
+        <%= link_to '<button type="button" class="btn btn-primary">Ingresar Usuario Nuevo</button>'.html_safe, new_admin_user_path %>
+
+    </tbody>
+
+</table>
+
+
+    
+    
+    
+    
+    

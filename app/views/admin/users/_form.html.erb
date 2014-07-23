@@ -1,0 +1,24 @@
+<div class= "sign_form">
+	
+	<%if @user.errors.any?%>
+		<ul class= "Signup_Errors">
+			<%for message_error in @user.errors.full_messages%>
+				<li>* <%=message_error%></li>
+			<%end%>
+		</ul>
+	<%end%>
+
+	<%= form_for([:admin, @user]) do |f|%>
+		<p> Usuario: </br><%=f.text_field :usuario%></p>
+		<p> Contrasena: </br><%=f.password_field :password%></p>
+		<p> Confirmar contrasena: </br> <%=f.password_field :password_confirmation%></p>
+		<p> Nombres: </br><%=f.text_field :nombres%></p>
+		<p> Apellido1: </br><%=f.text_field :apellido1%></p>
+		<p> Apellido2: </br><%=f.text_field :apellido2%></p>
+
+		<%=f.submit "Salvar Usuario"%>
+		
+		<%= link_to '<button type="button" class="btn btn-primary">Regresar</button>'.html_safe, admin_users_path %>
+	<%end%>
+
+</div>

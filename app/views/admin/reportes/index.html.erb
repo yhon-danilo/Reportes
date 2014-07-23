@@ -1,0 +1,49 @@
+
+<br>
+<div>
+    <h2>Administracion de Reportes</h2>
+</div>
+<div>
+    <%= link_to '<button type="button", class="btn btn-success">Regresar a Usuarios</button>'.html_safe, admin_users_path %>
+
+    <%= link_to '<button type="button", class="btn btn-primary", Id="lista_reportes">Enviar a CSV</button>'.html_safe, admin_user_reportes_path(format: "csv") %>
+
+    <%= link_to '<button type="button", class="btn btn-danger", Id="lista_reportes">Enviar a Excel</button>'.html_safe, admin_user_reportes_path(format: "xls") %>
+
+    <table class="table table-bordered table-striped">
+     <thead>
+            <tr>
+                <th>Cedula</th>
+                <th>Nombres</th>
+                <th>Apellido1</th>
+                <th>Apellido2</th>
+                <th>Creado</th>
+                <th>Actualizado</th>
+           </tr>
+        </thead>
+        <%@reportes.each do |reporte|%>
+            <tbody>
+                <tr>
+                    <td><%=reporte.cedula%> </td>
+                    <td><%=reporte.nombre%> </td>
+                   <td><%=reporte.apellido1%> </td>
+                    <td><%=reporte.apellido2%> </td>
+                    <td><%=reporte.created_at%></td>
+                    <td><%=reporte.updated_at%></td>
+                    <td><%=link_to 'Ver Reporte', admin_user_reporte_path(@user,reporte)%> </td>
+                 </tr>
+
+
+           </tbody>
+        <%end%>
+       
+    </table>
+</div>
+<div>
+    
+</div>
+
+
+
+
+

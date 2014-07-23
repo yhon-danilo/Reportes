@@ -1,0 +1,39 @@
+<table class="table table-bordered">
+
+    <thead>
+    </thead>
+ 	<tbody>
+    	<tr>
+        	<td>Nombres: <%=@reporte.nombre%></td>
+        </tr>
+        <tr>        	
+        	<td>Apellido: <%=@reporte.apellido1%></td>
+        </tr>   
+        <tr>
+        	<td>Edad: <%=@reporte.apellido2%></td>
+        </tr> 
+        <tr>
+        	<td>Telefono: <%=@reporte.dependencia%></td>
+        </tr>
+        <tr>
+        	<td>Asociado: <%=@reporte.asociado%></td>
+        </tr>
+        <tr>
+        	<td>Resultado: <%=@reporte.resultado%></td>
+        </tr>
+        <tr>
+        	<td>Referidos: <%=@reporte.referido%></td>
+        </tr>
+        <tr>
+        	<td>
+        		<%= link_to '<button type="button">Back to Ingresar</button>'.html_safe, user_reportes_path %>
+				
+				<%#link_to '<button type="button">Whatch properties</button>'.html_safe, persona_propiedades_path(@persona) %>      
+         	
+         	</td>
+        </tr>
+        
+    </tbody>
+    
+
+</table>

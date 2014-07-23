@@ -1,0 +1,24 @@
+<div class= "sign_form">
+	
+	<%if @user.errors.any?%>
+		<ul class= "Signup_Errors">
+			<%for message_error in @user.errors.full_messages%>
+				<li>* <%=message_error%></li>
+			<%end%>
+		</ul>
+	<%end%>
+	<h1>Crear usuarios</h1>
+	<%= form_for(:user, :url => {:controller =>'users', :action => 'create'}) do |f|%>
+		<p> Usuario: </br><%=f.text_field :usuario%></p>
+		<p> Contrasena: </br><%=f.password_field :password%></p>
+		<p> Confirmar contrasena: </br> <%=f.password_field :password_confirmation%></p>
+		<p> Nombres: </br><%=f.text_field :nombres%></p>
+		<p> Apellido1: </br><%=f.text_field :apellido1%></p>
+		<p> Apellido2: </br><%=f.text_field :apellido2%></p>
+
+		<%=f.submit :Crear%>
+		
+		<%= link_to '<button type="button" class="btn btn-primary">Regresar</button>'.html_safe, administrador_index_path %>
+	<%end%>
+
+</div>

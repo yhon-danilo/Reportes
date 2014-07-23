@@ -1,0 +1,35 @@
+<div align="right">
+    <%=link_to "Cerrar Sesion", logout_path%>
+</div>
+<br>
+<br>
+<br>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Cedula</th>
+            <th>Nombres</th>
+            <th>Apellido1</th>
+            <th>Apellido2</th>
+        </tr>
+    </thead>
+    <%@reportes.each do |reporte|%>
+        <tbody>
+            <tr>
+                <td><%=reporte.cedula%> </td>
+                <td> <%=reporte.nombre%> </td>
+                <td> <%=reporte.apellido1%> </td>
+                <td> <%=reporte.apellido2%> </td>
+                <td><%=link_to "Ver Registro", user_reporte_path(@user, reporte)%></td>
+                <td><%=link_to "Editar Registro", edit_user_reporte_path(@user ,reporte)%></td>
+                <td><%=link_to "Borrar Registro", user_reporte_path(@user, reporte), :confirm => "Estas seguro de borrar este registro", :method => :delete%></td>
+                </tr>
+        </tbody>
+    <%end%>
+</table>
+<%= link_to "Ingresar Registro", new_user_reporte_path%>
+
+
+
+
+

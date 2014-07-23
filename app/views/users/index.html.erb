@@ -1,0 +1,30 @@
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>                    
+            	Usuario
+            </th>
+            <th>Id</th>
+            <th>
+            	Nombres
+            </th>
+            <th> </th>
+            <th>Apellido1 </th>
+            <th>Apellido2 </th>
+        </tr>
+    </thead>
+    <%@user.each do |usuario|%>
+    
+    <tbody>
+    	
+         <tr>
+	            <td><%=usuario.usuario %></td>
+    	        <td><%=usuario.nombres %></td>
+                <td><%=usuario.apellido1 %></td>
+                <td><%=usuario.apellido2 %></td>
+        	</tr>
+    	   
+        <%end%>
+    </tbody>
+</table>
+<%= link_to '<button type="button" class="btn btn-primary">Regresar</button>'.html_safe, administrador_index_path %>

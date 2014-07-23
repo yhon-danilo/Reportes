@@ -1,0 +1,44 @@
+
+
+<?xml version="1.0"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:x="urn:schemas-microsoft-com:office:excel"
+  xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:html="http://www.w3.org/TR/REC-html40">
+  <Worksheet ss:Name="Sheet1">
+    <Table>
+      <Row>
+        <Cell><Data ss:Type="String">ID</Data></Cell>
+        <Cell><Data ss:Type="String">CEDULA</Data></Cell>
+        <Cell><Data ss:Type="String">NOMBRES</Data></Cell>
+        <Cell><Data ss:Type="String">APELLIDO1</Data></Cell>
+        <Cell><Data ss:Type="String">APELLIDO2</Data></Cell>
+        <Cell><Data ss:Type="String">AREA DE TRABAJO</Data></Cell>
+        <Cell><Data ss:Type="String">TELEFONO</Data></Cell>
+        <Cell><Data ss:Type="String">ASOCIADO</Data></Cell>
+        <Cell><Data ss:Type="String">RESULTADO</Data></Cell>
+        <Cell><Data ss:Type="String">REFERIDOS</Data></Cell>
+        <Cell><Data ss:Type="String">FECHA CREACION</Data></Cell>
+        <Cell><Data ss:Type="String">FECHA ULTIMA ACTUALIZACION</Data></Cell>
+      </Row>
+    <% @reportes.each do |reporte| %>
+      <Row>
+        <Cell><Data ss:Type="Number"><%= reporte.id %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= reporte.cedula %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= reporte.nombre %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= reporte.apellido1 %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= reporte.apellido2 %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= reporte.dependencia %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= reporte.telefono %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= reporte.asociado %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= reporte.resultado %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= reporte.referido %></Data></Cell>
+        <Cell><Data ss:Type="Date"><%= reporte.created_at %></Data></Cell>
+        <Cell><Data ss:Type="Date"><%= reporte.updated_at  %></Data></Cell>
+      </Row>
+    <% end %>
+    </Table>
+  </Worksheet>
+</Workbook>
+
